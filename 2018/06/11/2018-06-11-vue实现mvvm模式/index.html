@@ -154,7 +154,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://segmentfault.com/img/bVBQXk">
 <meta property="og:image" content="https://segmentfault.com/img/bVBQYu">
-<meta property="og:updated_time" content="2018-06-11T03:12:22.034Z">
+<meta property="og:updated_time" content="2018-06-15T01:39:56.002Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue实现mvvm模式">
 <meta name="twitter:description" content="vue实现mvvm模式 本文能帮你做什么？1、了解vue的双向数据绑定原理以及核心代码模块2、缓解好奇心的同时了解如何实现双向绑定为了便于说明原理与实现，本文相关代码主要摘自vue源码, 并进行了简化改造，相对较简陋，并未考虑到数组的处理、数据的循环依赖等，也难免存在一些问题，欢迎大家指正。不过这些并不会影响大家的阅读和理解，相信看完本文后对大家在阅读vue源码的时候会更有帮助&amp;lt;本文所有相关">
@@ -466,6 +466,7 @@
 <p>本文能帮你做什么？<br>1、了解vue的双向数据绑定原理以及核心代码模块<br>2、缓解好奇心的同时了解如何实现双向绑定<br>为了便于说明原理与实现，本文相关代码主要摘自vue源码, 并进行了简化改造，相对较简陋，并未考虑到数组的处理、数据的循环依赖等，也难免存在一些问题，欢迎大家指正。不过这些并不会影响大家的阅读和理解，相信看完本文后对大家在阅读vue源码的时候会更有帮助&lt;<br>本文所有相关代码均在github上面可找到 <a href="https://github.com/DMQ/mvvm" target="_blank" rel="noopener">https://github.com/DMQ/mvvm</a></p>
 </blockquote>
 <p>相信大家对mvvm双向绑定应该都不陌生了，一言不合上代码，下面先看一个本文最终实现的效果吧，和vue一样的语法，如果还不了解双向绑定，猛戳Google</p>
+<a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;mvvm-app&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; v-model=&quot;word&quot;&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123;word&#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;button v-on:click=&quot;sayHi&quot;&gt;change model&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script src=&quot;./js/observer.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;./js/watcher.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;./js/compile.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;./js/mvvm.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var vm = new MVVM(&#123;</span><br><span class="line">        el: &apos;#mvvm-app&apos;,</span><br><span class="line">        data: &#123;</span><br><span class="line">            word: &apos;Hello World!&apos;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods: &#123;</span><br><span class="line">            sayHi: function() &#123;</span><br><span class="line">                this.word = &apos;Hi, everybody!&apos;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <p>效果：<br><img src="https://segmentfault.com/img/bVBQXk" alt="image"></p>
 <p>几种实现双向绑定的做法</p>
@@ -595,8 +596,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/11/2018-06-15-email/" rel="next" title="关于邮件发送html的整理">
-                <i class="fa fa-chevron-left"></i> 关于邮件发送html的整理
+              <a href="/2018/06/11/2018-06-11-javascript大全/" rel="next" title="JavaScript 资源大全中文版">
+                <i class="fa fa-chevron-left"></i> JavaScript 资源大全中文版
               </a>
             
           </div>
@@ -605,8 +606,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/11/2018-06-11-javascript大全/" rel="prev" title="JavaScript 资源大全中文版">
-                JavaScript 资源大全中文版 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/14/2018-06-15-email/" rel="prev" title="关于邮件发送html的整理">
+                关于邮件发送html的整理 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
