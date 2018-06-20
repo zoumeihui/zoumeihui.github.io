@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-big-counter.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.1.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/touch-icon-iphone-retina-precomposed.png?v=6.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/touch-icon-iphone-precomposed.png?v=6.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.1.0">
+
+
+  <link rel="mask-icon" href="/touch-icon-ipad-retina-precomposed.png?v=6.1.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="1、什么是HTML语义化？基本上都是围绕着几个主要的标签，像标题（H1~H6）、列表（li）、强调（strong em）等等; 　　根据内容的结构化（内容语义化），选择合适的标签（代码语义化）便于开发者阅读和写出更优雅的代码的同时让浏览器的爬虫和机器很好地解析。 2、为什么要语义化？ 为了在没有CSS的情况下，页面也能呈现出很好地内容结构、代码结构:为了裸奔时好看； 用户体验：例如title、al">
+<meta name="keywords" content="html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML语义化">
+<meta property="og:url" content="http://yoursite.com/2018/06/20/2018-06-20-html语义化/index.html">
+<meta property="og:site_name" content="﹏ Memory °">
+<meta property="og:description" content="1、什么是HTML语义化？基本上都是围绕着几个主要的标签，像标题（H1~H6）、列表（li）、强调（strong em）等等; 　　根据内容的结构化（内容语义化），选择合适的标签（代码语义化）便于开发者阅读和写出更优雅的代码的同时让浏览器的爬虫和机器很好地解析。 2、为什么要语义化？ 为了在没有CSS的情况下，页面也能呈现出很好地内容结构、代码结构:为了裸奔时好看； 用户体验：例如title、al">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-06-20T10:34:29.324Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML语义化">
+<meta name="twitter:description" content="1、什么是HTML语义化？基本上都是围绕着几个主要的标签，像标题（H1~H6）、列表（li）、强调（strong em）等等; 　　根据内容的结构化（内容语义化），选择合适的标签（代码语义化）便于开发者阅读和写出更优雅的代码的同时让浏览器的爬虫和机器很好地解析。 2、为什么要语义化？ 为了在没有CSS的情况下，页面也能呈现出很好地内容结构、代码结构:为了裸奔时好看； 用户体验：例如title、al">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/20/2018-06-20-html语义化/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>HTML语义化 | ﹏ Memory °</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">﹏ Memory °</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">修行的路总是孤独的，因为智慧必然来自孤独。</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+          
+  
+  <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+</li>
+
+      
+        
+        
+          
+  
+  <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">8</span>
+      </a>
+</li>
+
+      
+        
+        
+          
+  
+  <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+</li>
+
+      
+        
+        
+          
+  
+  <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">8</span>
+      </a>
+</li>
+
+      
+        
+        
+          
+  
+  <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">13</span>
+      </a>
+</li>
+
+      
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/20/2018-06-20-html语义化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zoumeihui">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://www.gravatar.com/avatar/e87b264d88631de777ecfe2abb602de6?size=128">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="﹏ Memory °">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">HTML语义化
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+                
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-20T18:29:00+08:00">2018-06-20</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/html/" itemprop="url" rel="index"><span itemprop="name">html</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/06/20/2018-06-20-html语义化/" class="leancloud_visitors" data-flag-title="HTML语义化">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1、什么是HTML语义化？"><a href="#1、什么是HTML语义化？" class="headerlink" title="1、什么是HTML语义化？"></a>1、什么是HTML语义化？</h2><pre><code>基本上都是围绕着几个主要的标签，像标题（H1~H6）、列表（li）、强调（strong em）等等;
+</code></pre><p>　　根据内容的结构化（内容语义化），选择合适的标签（代码语义化）便于开发者阅读和写出更优雅的代码的同时让浏览器的爬虫和机器很好地解析。</p>
+<h2 id="2、为什么要语义化？"><a href="#2、为什么要语义化？" class="headerlink" title="2、为什么要语义化？"></a>2、为什么要语义化？</h2><ul>
+<li>为了在没有CSS的情况下，页面也能呈现出很好地内容结构、代码结构:为了裸奔时好看；</li>
+<li>用户体验：例如title、alt用于解释名词或解释图片信息、label标签的活用；</li>
+<li>有利于 <a href="http://baike.baidu.com/view/1047.htm" target="_blank" rel="noopener">SEO</a>：和搜索引擎建立良好沟通，有助于爬虫抓取更多的有效信息： <a href="http://baike.baidu.com/view/998403.htm" target="_blank" rel="noopener">爬虫</a>依赖于标签来确定上下文和各个关键字的权重；</li>
+<li>方便其他设备解析（如屏幕阅读器、盲人阅读器、移动设备）以意义的方式来渲染网页；</li>
+<li>便于团队开发和维护，语义化更具可读性，是下一步吧网页的重要动向，遵循W3C标准的团队都遵循这个标准，可以减少差异化。</li>
+</ul>
+<a id="more"></a>
+<h2 id="3、写HTML代码时应注意什么？"><a href="#3、写HTML代码时应注意什么？" class="headerlink" title="3、写HTML代码时应注意什么？"></a>3、写HTML代码时应注意什么？</h2><ul>
+<li>尽可能少的使用无语义的标签div和span；</li>
+<li>在语义不明显时，既可以使用div或者p时，尽量用p, 因为p在默认情况下有上下间距，对兼容特殊终端有利；</li>
+<li>不要使用纯样式标签，如：b、font、u等，改用css设置。</li>
+<li>需要强调的文本，可以包含在strong或者em标签中（浏览器预设样式，能用CSS指定就不用他们），strong默认样式是加粗（不要用b），em是斜体（不用i）；</li>
+<li>使用表格时，标题要用caption，表头用thead，主体部分用tbody包围，尾部用tfoot包围。表头和一般单元格要区分开，表头用th，单元格用td；</li>
+<li>表单域要用fieldset标签包起来，并用legend标签说明表单的用途；</li>
+<li>每个input标签对应的说明文本都需要使用label标签，并且通过为input设置id属性，在lable标签中设置for=someld来让说明文本和相对应的input关联起来。</li>
+</ul>
+<h2 id="4、HTML5新增了哪些语义标签"><a href="#4、HTML5新增了哪些语义标签" class="headerlink" title="4、HTML5新增了哪些语义标签"></a>4、HTML5新增了哪些语义标签</h2><p>  通用容器：div——块级通用容器；span——短语内容无语义容器。</p>
+<p>  如果语义不合适，也不要霸王硬上弓，=。。 =老实的用div吧。</p>
+<p><strong><em>  &lt; title&gt;&lt;/title&gt;：简短、描述性、唯一（提升搜索引擎排名）。</em></strong></p>
+<p><strong><em>  搜索引擎会将title作为判断页面主要内容的指标，有效的title应该包含几个与页面内容密切相关的关键字，建议将title核心内容放在前60个字符中。</em></strong></p>
+<p><strong><em>  &lt;hn&gt;&lt;/hn&gt;：h1~h6分级标题，用于创建页面信息的层级关系。</em></strong></p>
+<p><strong><em>  对于搜索引擎而言，如果标题与搜索词匹配，这些标题就会被赋予很高的权重，尤其是h1。</em></strong></p>
+<p><strong><em>  &lt;header&gt;&lt;/header&gt;：页眉通常包括网站标志、主导航、全站链接以及搜索框。</em></strong></p>
+<p><strong><em>  也适合对页面内部一组介绍性或导航性内容进行标记。</em></strong></p>
+<p><strong><em>  &lt;nav&gt;&lt;/nav&gt;：标记导航，仅对文档中重要的链接群使用。</em></strong></p>
+<p><strong><em>  html5规范不推荐对辅助性页脚链接使用nav，除非页脚再次显示顶级全局导航、或者包含招聘信息等重要链接。</em></strong></p>
+<p><strong><em>  &lt;main&gt;&lt;/main&gt;：页面主要内容，一个页面只能使用一次。如果是web应用，则包围其主要功能。</em></strong></p>
+<p><strong><em>  &lt;article&gt;&lt;/article&gt;：包含像报纸一样的内容= =||是这么理解的，表示文档、页面、应用或一个独立的容器。</em></strong></p>
+<p><strong><em>  article可以嵌套article，只要里面的article与外面的是部分与整体的关系。</em></strong></p>
+<p><strong><em>  &lt;section&gt;&lt;/section&gt;：具有相似主题的一组内容，比如网站的主页可以分成介绍、新闻条目、联系信息等条块。</em></strong></p>
+<p><strong><em>  如果只是为了添加样式，请用div！</em></strong></p>
+<p><strong><em>  &lt;aside&gt;&lt;/aside&gt;：指定附注栏，包括引述、侧栏、指向文章的一组链接、广告、友情链接、相关产品列表等。</em></strong></p>
+<p><strong><em>  如果放在main内，应该与所在内容密切相关。</em></strong></p>
+<p><strong><em>  &lt;footer&gt;&lt;/footer&gt;：页脚，只有当父级是body时，才是整个页面的页脚。</em></strong></p>
+<p><strong><em>  &lt;small&gt;&lt;/small&gt;：指定细则，输入免责声明、注解、署名、版权。</em></strong></p>
+<p><strong><em>  只适用于短语，不要用来标记&quot;使用条款&quot;、&quot;隐私政策&quot;等长的法律声明。</em></strong></p>
+<p><strong><em>  &lt;strong&gt;&lt;/strong&gt;：表示内容重要性。</em></strong></p>
+<p><strong><em>  &lt;em&gt;&lt;/em&gt;：标记内容着重点（大量用于提升段落文本语义）。</em></strong></p>
+<p><strong><em>  &lt;mark&gt;&lt;/mark&gt;：突出显示文本（yellow），提醒读者。</em></strong></p>
+<p><strong><em>  在HTML5中em是表示强调的唯一元素，而strong则表示重要程度。</em></strong></p>
+<p><strong><em>  &lt;b&gt;&lt;/b&gt;：出于实用目的提醒读者的一块文字，不传达任何额外的重要性</em></strong></p>
+<p><strong><em>  &lt;i&gt;&lt;/i&gt;：不同于其他文字的文字= =|||这个翻译真的是······</em></strong></p>
+<p><strong><em>  &lt;figure&gt;&lt;/figure&gt;：创建图（默认有40px左右margin）。</em></strong></p>
+<p><strong><em>  &lt;figcaption&gt;&lt;/figcaption&gt;：figure的标题，必须是figure内嵌的第一个或者最后一个元素。</em></strong></p>
+<p><strong><em>  &lt;cite&gt;&lt;/cite&gt;：指明引用或者参考，如图书的标题，歌曲、电影、等的名称，演唱会、音乐会、规范、报纸、或法律文件等。</em></strong></p>
+<p><strong><em>  只用于参考源本身，而不是从中引述。</em></strong></p>
+<p><strong><em>  &lt;blockquoto&gt;&lt;/blockquoto&gt;：引述文本，默认新的一行显示。</em></strong></p>
+<p><strong><em>  &lt;q&gt;&lt;/q&gt;：短的引述（跨浏览器问题，尽量避免使用）。</em></strong></p>
+<p><strong><em>  可以对blockquoto和q元素使用cite属性（不是cite元素！），对搜索引擎自动化工具有用。cite=&quot;URL&quot;引述来源地址。</em></strong></p>
+<p><strong><em>  &lt;time&gt;&lt;/time&gt;：标记时间。datetime属性遵循特定格式，如果忽略此属性，文本内容必须是合法的日期或者时间格式。</em></strong></p>
+<p><strong><em>  不再相关的时间用s标签。</em></strong></p>
+<p><strong><em>  &lt;abbr&gt;&lt;/abbr&gt;：解释缩写词。使用title属性可提供全称，只在第一次出现时使用就ok。</em></strong></p>
+<p><strong><em>  abbr[title]{ border-bottom:1px dotted #000; }</em></strong></p>
+<p><strong><em>  &lt;dfn&gt;&lt;/dfn&gt;：定义术语元素，与定义必须紧挨着，可以在描述列表dl元素中使用。</em></strong></p>
+<p><strong><em>  &lt;address&gt;&lt;/address&gt;：作者、相关人士或组织的联系信息（电子邮件地址、指向联系信息页的链接）。</em></strong></p>
+<p><strong><em>  如果提供整个页面的作者联系信息，一般放在页面级footer里。不能包含文档或者文档等其他内容。</em></strong></p>
+<p><strong><em>  &lt;del&gt;&lt;/del&gt;：移除的内容。</em></strong></p>
+<p><strong><em>  &lt;ins&gt;&lt;/ins&gt;：添加的内容。</em></strong></p>
+<p><strong><em>  少有的既可以包围块级，又可以包围短语内容的元素。</em></strong></p>
+<p><strong><em>  &lt;code&gt;&lt;/code&gt;：标记代码。包含示例代码或者文件名 （&lt; &amp;lt; &gt; &amp;gt;）</em></strong></p>
+<p><strong><em>  &lt;pre&gt;&lt;/pre&gt;：预格式化文本。保留文本固有的换行和空格。</em></strong></p>
+<p><strong><em>  &lt;progress&gt;&lt;/progress&gt;：完成进度。可通过js动态更新value。</em></strong></p>
+<p><strong><em>&lt;article&gt; 定义文章，规定独立的自包含内容</em></strong></p>
+<p>&lt;article&gt;</p>
+<p>  &lt;h1&gt;Internet Explorer 9&lt;/h1&gt;</p>
+<p>  &lt;p&gt;Windows Internet Explorer 9（简称 IE9）于 2011 年 3 月 14 日发布…..&lt;/p&gt;</p>
+<p>&lt;/article&gt;</p>
+<p><strong><em>&lt;aside&gt; 定义页面内容之外的内容</em></strong></p>
+<p>&lt;p&gt;Me and my family visited The Epcot center this summer.&lt;/p&gt;</p>
+<p>&lt;aside&gt;</p>
+<p>&lt;h4&gt;Epcot Center&lt;/h4&gt;</p>
+<p>The Epcot Center is a theme park in Disney World, Florida.</p>
+<p>&lt;/aside&gt;</p>
+<p><strong><em>&lt;audio&gt; 定义声音内容，比如音乐或其他音频流</em></strong></p>
+<p>&lt;audio src=&quot;someaudio.wav&quot;&gt;</p>
+<p>  您的浏览器不支持 audio 标签。</p>
+<p>&lt;/audio&gt;</p>
+<p><strong><em>&lt;bdi&gt; 定义文本的文本方向，使其脱离其周围文本的方向设置（没看懂这个具体是怎么用）</em></strong></p>
+<p>&lt;ul&gt;</p>
+<p>&lt;li&gt;Username &lt;bdi&gt;Bill&lt;/bdi&gt;:80 points&lt;/li&gt;</p>
+<p>&lt;li&gt;Username &lt;bdi&gt;Steve&lt;/bdi&gt;: 78 points&lt;/li&gt;</p>
+<p>&lt;/ul&gt;</p>
+<p><strong><em>&lt;canvas&gt; 定义图形 （这是h5的新特性，用的还蛮多的）</em></strong></p>
+<p>&lt;canvas id=&quot;myCanvas&quot;&gt;&lt;/canvas&gt;</p>
+<p>&lt;script type=&quot;text/javascript&quot;&gt;</p>
+<p>var canvas=document.getElementById(&#39;myCanvas&#39;);</p>
+<p>var ctx=canvas.getContext(&#39;2d&#39;);</p>
+<p>ctx.fillStyle=&#39;#FF0000&#39;;</p>
+<p>ctx.fillRect(0,0,80,100);</p>
+<p>&lt;/script&gt;</p>
+<p><strong><em>&lt;command&gt; 定义命令按钮 (只有ie9支持这个标签)</em></strong></p>
+<p>&lt;menu&gt;</p>
+<p>&lt;command onclick=&quot;alert(&#39;Hello World&#39;)&quot;&gt;</p>
+<p>Click Me!&lt;/command&gt;</p>
+<p>&lt;/menu&gt;</p>
+<p>没觉得与button有什么区别啊</p>
+<p><strong><em>&lt;datalist&gt; 定义下拉列表（配合input使用）</em></strong></p>
+<p>&lt;input id=&quot;myCar&quot; list=&quot;cars&quot; /&gt;</p>
+<p>&lt;datalist id=&quot;cars&quot;&gt;</p>
+<p>  &lt;option value=&quot;BMW&quot;&gt;</p>
+<p>  &lt;option value=&quot;Ford&quot;&gt;</p>
+<p>  &lt;option value=&quot;Volvo&quot;&gt;</p>
+<p>&lt;/datalist&gt;</p>
+<p>这个应该比较下与select有什么区别:</p>
+<p>select：5个值里面选择1个；</p>
+<p>datalist：你可以在文本框里填值，也可以在下面5个值里选1个。</p>
+<p><strong><em>&lt;details&gt; 定义元素的细节:页面只显示summary里的内容，点击之后才显示p里的内容</em></strong></p>
+<p>&lt;details&gt;&lt;summary&gt;Copyright 2011.&lt;/summary&gt;</p>
+<p>&lt;p&gt;All pages and graphics on this web site are the property of W3School.&lt;/p&gt;</p>
+<p>&lt;/details&gt;</p>
+<p><strong><em>&lt;dialog&gt; 定义对话框或窗口</em></strong></p>
+<p>&lt;table border=&quot;1&quot;&gt;</p>
+<p>&lt;tr&gt;</p>
+<p>  &lt;th&gt;一月 &lt;dialog open&gt;这是打开的对话窗口&lt;/dialog&gt;&lt;/th&gt;</p>
+<p>  &lt;th&gt;二月&lt;/th&gt;</p>
+<p>  &lt;th&gt;三月&lt;/th&gt;</p>
+<p>&lt;/tr&gt;</p>
+<p>&lt;tr&gt;</p>
+<p>  &lt;td&gt;31&lt;/td&gt;</p>
+<p>  &lt;td&gt;28&lt;/td&gt;</p>
+<p>  &lt;td&gt;31&lt;/td&gt;</p>
+<p>&lt;/tr&gt;</p>
+<p>&lt;/table&gt;</p>
+<p>没太明白这个有什么作用</p>
+<p><strong><em>&lt;embed&gt; 定义外部交互内容或插件</em></strong></p>
+<p>&lt;embed src=&quot;helloworld.swf&quot; /&gt;</p>
+<p><strong><em>&lt;figcaption&gt; 定义figure元素的标题</em></strong></p>
+<p>&lt;figure&gt;</p>
+<p>  &lt;figcaption&gt;黄浦江上的的卢浦大桥&lt;/figcaption&gt;</p>
+<p>  &lt;img src=&quot;shanghai_lupu_bridge.jpg&quot; width=&quot;350&quot; height=&quot;234&quot; /&gt;</p>
+<p>&lt;/figure&gt;</p>
+<p><strong><em>&lt;figure&gt; 定义媒介</em></strong></p>
+<p>  用作文档中插图的图像：</p>
+<p>&lt;figure&gt;</p>
+<p>  &lt;p&gt;黄浦江上的的卢浦大桥&lt;/p&gt;</p>
+<p>  &lt;img src=&quot;shanghai_lupu_bridge.jpg&quot; width=&quot;350&quot; height=&quot;234&quot; /&gt;</p>
+<p>&lt;/figure&gt;</p>
+<p><strong><em>&lt;footer&gt; 定义section或page的页脚</em></strong></p>
+<p>&lt;footer&gt;</p>
+<p>  &lt;p&gt;Posted by: W3School&lt;/p&gt;</p>
+<p>  &lt;p&gt;Contact information: &lt;a href=&quot;mailto:<a href="mailto:someone@example.com" target="_blank" rel="noopener">someone@example.com</a>&quot;&gt;<a href="mailto:someone@example.com" target="_blank" rel="noopener">someone@example.com</a>&lt;/a&gt;.&lt;/p&gt;</p>
+<p>&lt;/footer&gt;</p>
+<p><strong><em>&lt;header&gt; 定义section或page的页眉</em></strong></p>
+<p>&lt;header&gt;</p>
+<p>  &lt;p&gt;Posted by: W3School&lt;/p&gt;</p>
+<p>  &lt;p&gt;Contact information: &lt;a href=&quot;mailto:<a href="mailto:someone@example.com" target="_blank" rel="noopener">someone@example.com</a>&quot;&gt;<a href="mailto:someone@example.com" target="_blank" rel="noopener">someone@example.com</a>&lt;/a&gt;.&lt;/p&gt;</p>
+<p>&lt;/header&gt;</p>
+<p><strong><em>&lt;keygen&gt; 定义生成密钥</em></strong></p>
+<p>&lt;form action=&quot;demo_keygen.asp&quot; method=&quot;get&quot;&gt;</p>
+<p>Username: &lt;input type=&quot;text&quot; name=&quot;usr_name&quot; /&gt;</p>
+<p>Encryption: &lt;keygen name=&quot;security&quot; /&gt;</p>
+<p>&lt;input type=&quot;submit&quot; /&gt;</p>
+<p>&lt;/form&gt;</p>
+<p><strong><em>&lt;meter&gt; 定义预定义范围内的度量</em></strong></p>
+<p>&lt;meter value=&quot;3&quot; min=&quot;0&quot; max=&quot;10&quot;&gt;十分之三&lt;/meter&gt;</p>
+<p>&lt;meter value=&quot;0.6&quot;&gt;60%&lt;/meter&gt;</p>
+<p><strong><em>&lt;output&gt; 定义输出的一些类型</em></strong></p>
+<p>&lt;form oninput=&quot;x.value=parseInt(a.value)+parseInt(b.value)&quot;&gt;0</p>
+<p>  &lt;input type=&quot;range&quot; id=&quot;a&quot; value=&quot;50&quot;&gt;100</p>
+<p>  +&lt;input type=&quot;number&quot; id=&quot;b&quot; value=&quot;50&quot;&gt;</p>
+<p>  =&lt;output name=&quot;x&quot; for=&quot;a b&quot;&gt;&lt;/output&gt;</p>
+<p>&lt;/form&gt;</p>
+<p><strong><em> &lt;rp&gt; 定义若浏览器不支持ruby元素显示的内容</em></strong></p>
+<p>&lt;ruby&gt;</p>
+<p>漢 &lt;rt&gt;&lt;rp&gt;(&lt;/rp&gt;ㄏㄢˋ&lt;rp&gt;)&lt;/rp&gt;&lt;/rt&gt;</p>
+<p>&lt;/ruby&gt;</p>
+<p><strong><em> &lt;rt&gt; 定义ruby注释的解释</em></strong></p>
+<p>&lt;ruby&gt;</p>
+<p>漢 &lt;rt&gt;&lt;rp&gt;(&lt;/rp&gt;ㄏㄢˋ&lt;rp&gt;)&lt;/rp&gt;&lt;/rt&gt;</p>
+<p>&lt;/ruby&gt;</p>
+<p>  <strong><em>&lt;ruby&gt; 定义ruby注释</em></strong></p>
+<p>　　　　&lt;rp&gt; 标签在 ruby 注释中使用，以定义不支持 ruby 元素的浏览器所显示的内容。</p>
+<p>　　　　ruby 注释是中文注音或字符。</p>
+<p>　　　　在东亚使用，显示的是东亚字符的发音。</p>
+<p>　　　　与 &lt;ruby&gt; 以及 &lt;rt&gt; 标签一同使用：</p>
+<p>　　　　ruby 元素由一个或多个字符（需要一个解释/发音）和一个提供该信息的 rt 元素组成，还包括可选的 rp 元素，定义当浏览器不支持 &quot;ruby&quot; 元素时显示的内容。</p>
+<p>  <strong><em>&lt;section&gt; 定义section</em></strong></p>
+<p>　　　　&lt;section&gt; 标签定义文档中的节（section、区段）。比如章节、页眉、页脚或文档中的其他部分。</p>
+<p><strong><em>&lt;source&gt; 定义媒介源</em></strong></p>
+<p>　　拥有两份源文件的音频播放器。浏览器应该选择它所支持的文件（如果有的话）：</p>
+<p>  &lt;audio controls&gt;</p>
+<p>  &lt;source src=&quot;horse.ogg&quot; type=&quot;audio/ogg&quot;&gt;</p>
+<p>  &lt;source src=&quot;horse.mp3&quot; type=&quot;audio/mpeg&quot;&gt;</p>
+<p>  Your browser does not support the audio element.</p>
+<p>  &lt;/audio&gt;</p>
+<p><strong><em> &lt;summary&gt; 为&lt;details&gt;元素定义可见的标题</em></strong></p>
+<p>&lt;details&gt;</p>
+<p>&lt;summary&gt;HTML 5&lt;/summary&gt;</p>
+<p>This document teaches you everything you have to learn about HTML 5.</p>
+<p>&lt;/details&gt;</p>
+<p><strong><em>&lt;time&gt; 定义日期/时间</em></strong></p>
+<p>　　如何定义时间和日期：</p>
+<p>  &lt;p&gt;我们在每天早上 &lt;time&gt;9:00&lt;/time&gt; 开始营业。&lt;/p&gt;</p>
+<p>  &lt;p&gt;我在 &lt;time datetime=&quot;2008-02-14&quot;&gt;情人节&lt;/time&gt; 有个约会。&lt;/p&gt;</p>
+<p><strong><em> &lt;track&gt; 定义用在媒体播放器中的文本轨道</em></strong></p>
+<p>　　播放带有字幕的视频：</p>
+<p>  &lt;video width=&quot;320&quot; height=&quot;240&quot; controls=&quot;controls&quot;&gt;</p>
+<p>  &lt;source src=&quot;forrest_gump.mp4&quot; type=&quot;video/mp4&quot; /&gt;</p>
+<p>  &lt;source src=&quot;forrest_gump.ogg&quot; type=&quot;video/ogg&quot; /&gt;</p>
+<p>  &lt;track kind=&quot;subtitles&quot; src=&quot;subs_chi.srt&quot; srclang=&quot;zh&quot; label=&quot;Chinese&quot;&gt;</p>
+<p>  &lt;track kind=&quot;subtitles&quot; src=&quot;subs_eng.srt&quot; srclang=&quot;en&quot; label=&quot;English&quot;&gt;</p>
+<p>  &lt;/video&gt;</p>
+<p>　　&lt;track&gt; 标签为诸如 video 元素之类的媒介规定外部文本轨道。</p>
+<p>　　用于规定字幕文件或其他包含文本的文件，当媒介播放时，这些文件是可见的。</p>
+<p><strong><em> &lt;video&gt; 定义视频，比如电影片段或其他视频流。</em></strong></p>
+<p>　　一段简单的 HTML5 视频：</p>
+<p>  &lt;video src=&quot;movie.ogg&quot; controls=&quot;controls&quot;&gt;</p>
+<p>  您的浏览器不支持 video 标签。</p>
+<p>  &lt;/video&gt;</p>
+<p><strong><em> &lt;wbr&gt; 定义视频</em></strong></p>
+<p>&lt;p&gt;</p>
+<p>如果想学习 AJAX，那么您必须熟悉 XML&lt;wbr&gt;Http&lt;wbr&gt;Request 对象。</p>
+<p>&lt;/p&gt;</p>
+<p>用法：</p>
+<p>Word Break Opportunity (&lt;wbr&gt;) 规定在文本中的何处适合添加换行符。</p>
+<h2 id="5-一般网站大体构建"><a href="#5-一般网站大体构建" class="headerlink" title="5.一般网站大体构建"></a>5.一般网站大体构建</h2><p>-</p>
+<ul>
+<li><strong><em>标题: </em></strong> <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/header" target="_blank" rel="noopener">&lt;header&gt;</a>.</li>
+<li><strong><em>导航栏: </em></strong> <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/nav" target="_blank" rel="noopener">&lt;nav&gt;</a>.</li>
+<li><strong><em>主要内容: </em></strong> <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/main" target="_blank" rel="noopener">&lt;main&gt;</a>, 具有代表性的内容段落主题可以使用  <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/article" target="_blank" rel="noopener">&lt;article&gt;</a>,  <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/section" target="_blank" rel="noopener">&lt;section&gt;</a>, 和  <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/div" target="_blank" rel="noopener">&lt;div&gt;</a> 元素.</li>
+<li><strong><em>侧栏: </em></strong> <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/aside" target="_blank" rel="noopener">&lt;aside&gt;</a>; 经常嵌套在  <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/main" target="_blank" rel="noopener">&lt;main&gt;</a> 中.</li>
+<li><strong><em>页脚: </em></strong> <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/footer" target="_blank" rel="noopener">&lt;footer&gt;</a>.</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>壕，请用金钱羞辱我！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/static/images/wx.png" alt="zoumeihui 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>zoumeihui</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/2018/06/20/2018-06-20-html语义化/" title="HTML语义化">http://yoursite.com/2018/06/20/2018-06-20-html语义化/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc/4.0/" rel="external nofollow" target="_blank">CC BY-NC 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/html/" rel="tag"># html</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/14/2018-06-15-email/" rel="next" title="关于邮件发送html的整理">
+                <i class="fa fa-chevron-left"></i> 关于邮件发送html的整理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://www.gravatar.com/avatar/e87b264d88631de777ecfe2abb602de6?size=128"
+                alt="zoumeihui" />
+            
+              <p class="site-author-name" itemprop="name">zoumeihui</p>
+              <p class="site-description motion-element" itemprop="description">End of the road is still the way, if you want to go..</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/zoumeihui" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://zoumeihui.github.io/2018/06/09/hello-world/" target="_blank" title="Mylog" rel="external nofollow"><i class="fa fa-fw fa-globe"></i>Mylog</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://zoumeihui.github.io/2018/06/09/resume/" target="_blank" title="Resume" rel="external nofollow"><i class="fa fa-fw fa-globe"></i>Resume</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="243912063" target="_blank" title="QQ" rel="external nofollow"><i class="fa fa-fw fa-qq"></i>QQ</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="243912063@qq.com" target="_blank" title="Email" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>Email</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc/4.0/" class="cc-opacity" target="_blank" rel="external nofollow">
+                <img src="/images/cc-by-nc.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.baidu.com" title="Search" target="_blank">Search</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、什么是HTML语义化？"><span class="nav-number">1.</span> <span class="nav-text">1、什么是HTML语义化？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、为什么要语义化？"><span class="nav-number">2.</span> <span class="nav-text">2、为什么要语义化？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、写HTML代码时应注意什么？"><span class="nav-number">3.</span> <span class="nav-text">3、写HTML代码时应注意什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、HTML5新增了哪些语义标签"><span class="nav-number">4.</span> <span class="nav-text">4、HTML5新增了哪些语义标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-一般网站大体构建"><span class="nav-number">5.</span> <span class="nav-text">5.一般网站大体构建</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zoumeihui</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.1.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("uOoGuWdXSYaRWVH1yqf8PhRV-gzGzoHsz", "kizKXuyzPm6E7A3BrQRGlj7t");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            
+            counter.save(null, {
+              success: function(counter) {
+                
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
+            
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 11948,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
