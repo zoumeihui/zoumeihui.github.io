@@ -271,7 +271,7 @@
   
   <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">10</span>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">11</span>
       </a>
 </li>
 
@@ -292,7 +292,7 @@
   
   <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">9</span>
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">10</span>
       </a>
 </li>
 
@@ -303,7 +303,7 @@
   
   <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">13</span>
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">14</span>
       </a>
 </li>
 
@@ -341,6 +341,182 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/20/2018-7-20-nodejs的stream/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zoumeihui">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://www.gravatar.com/avatar/e87b264d88631de777ecfe2abb602de6?size=128">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="﹏ Memory °">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/20/2018-7-20-nodejs的stream/" itemprop="url">
+                  nodejs的stream
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+                
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-20T18:29:00+08:00">2018-07-20</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/nodejs/" itemprop="url" rel="index"><span itemprop="name">nodejs</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/07/20/2018-7-20-nodejs的stream/" class="leancloud_visitors" data-flag-title="nodejs的stream">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>[toc]</p>
+<h4 id="nodejs的stream"><a href="#nodejs的stream" class="headerlink" title="nodejs的stream"></a>nodejs的stream</h4><h5 id="一-为什么需要流（Stream）？"><a href="#一-为什么需要流（Stream）？" class="headerlink" title="一.  为什么需要流（Stream）？"></a>一.  为什么需要流（Stream）？</h5><p>　　举个例子，如果要读取一个文件，一次性读取需要占用大内存，是不可取的。因此就有了流，用流会很方便，可以帮我们避免这样的问题，调用其接口不用关心底层如何实现。</p>
+<h5 id="二-什么是流（Stream）？"><a href="#二-什么是流（Stream）？" class="headerlink" title="二. 什么是流（Stream）？"></a>二. 什么是流（Stream）？</h5><p>　　流（Stream）是可读，可写或双工的。可以通过require(‘stream’)加载流的基类，其中包括四类流， Readable 流、Writable 流、Duplex 流和Transform 流的基类。</p>
+<p>　　另外如果觉得上述四类基类流不能满足需求，可以编写自己的扩充类流。像我们Team现在正做的Node项目，就重写了Transform类以供使用。</p>
+<p>按照官方的API文档，步骤如下：</p>
+<ul>
+<li>在您的子类中扩充适合的父类。（例如util.inherits(MyTransform, Transform); ）</li>
+<li>在您的构造函数中调用父类的构造函数，以确保内部的机制被正确初始化。</li>
+<li>实现一个或多个特定的方法，参见下面的细节。　</li>
+</ul>
+<p>在nodejs中，有四种stream类型：</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/20/2018-7-20-nodejs的stream/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -967,178 +1143,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/14/2018-06-15-email/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zoumeihui">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://www.gravatar.com/avatar/e87b264d88631de777ecfe2abb602de6?size=128">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="﹏ Memory °">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/14/2018-06-15-email/" itemprop="url">
-                  关于邮件发送html的整理
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-                
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-14T18:29:00+08:00">2018-06-14</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/html/" itemprop="url" rel="index"><span itemprop="name">html</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/06/14/2018-06-15-email/" class="leancloud_visitors" data-flag-title="关于邮件发送html的整理">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="关于邮件发送html的整理"><a href="#关于邮件发送html的整理" class="headerlink" title="关于邮件发送html的整理"></a>关于邮件发送html的整理</h2><p>基本规则<br>控制宽度</p>
-<p>由于Outlook仍然是邮件客户端的霸主，默认界面邮件的科室宽度对于一般屏幕在800px左右，所以不要把邮件内容设置的过宽，700px是个不错的选择</p>
-<p>布局使用 table</p>
-<p>这几乎是 HTML 邮件与普通 HTML 页面最大的区别，因为各个邮箱对 div + css 这一套布局的解析问题很大（如 float / position 等 CSS 都会被过滤，甚至 margin: 0 auto; 都不起作用），基本各大邮箱都会解析混乱，所以老式的 table 布局是上乘之选。这就意味着 HTML 邮件中几乎只有这几个元素——table / tr / td / span / img / a，尽量避免使用 div / p 或是其他标签。</p>
-<p>而且并不是所有邮箱都支持 colspan / rowspan 属性，所以所有布局都需要使用 table 嵌套解决。</p>
-<p>使用表格布局导致的最直接的问题就是会产生多余的空白像素，所以要养成习惯给每个 table 都加上边框 border，单元格内边距 cellpadding，单元格间距 cellspacing，边框合并属性 border-collapse 这些属性：</p>
-<p>&lt;table border=”0”cellpadding=”0”cellspacing=”0”style=”border-collapse: collapse;”&gt;</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/14/2018-06-15-email/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/14/2018-06-15-css单位/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1311,7 +1315,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/2018-06-11-vue实现mvvm模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/14/2018-06-15-email/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zoumeihui">
@@ -1330,8 +1334,8 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/11/2018-06-11-vue实现mvvm模式/" itemprop="url">
-                  vue实现mvvm模式
+                <a class="post-title-link" href="/2018/06/14/2018-06-15-email/" itemprop="url">
+                  关于邮件发送html的整理
                 </a>
               
             
@@ -1351,7 +1355,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-11T18:29:00+08:00">2018-06-11</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-14T18:29:00+08:00">2018-06-14</time>
             
 
             
@@ -1372,7 +1376,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/html/" itemprop="url" rel="index"><span itemprop="name">html</span></a></span>
 
                 
                 
@@ -1386,7 +1390,7 @@
 
           
           
-             <span id="/2018/06/11/2018-06-11-vue实现mvvm模式/" class="leancloud_visitors" data-flag-title="vue实现mvvm模式">
+             <span id="/2018/06/14/2018-06-15-email/" class="leancloud_visitors" data-flag-title="关于邮件发送html的整理">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1418,13 +1422,16 @@
 
       
         
-          <h1 id="vue实现mvvm模式"><a href="#vue实现mvvm模式" class="headerlink" title="vue实现mvvm模式"></a>vue实现mvvm模式</h1><blockquote>
-<p>本文能帮你做什么？<br>1、了解vue的双向数据绑定原理以及核心代码模块<br>2、缓解好奇心的同时了解如何实现双向绑定<br>为了便于说明原理与实现，本文相关代码主要摘自vue源码, 并进行了简化改造，相对较简陋，并未考虑到数组的处理、数据的循环依赖等，也难免存在一些问题，欢迎大家指正。不过这些并不会影响大家的阅读和理解，相信看完本文后对大家在阅读vue源码的时候会更有帮助&lt;<br>本文所有相关代码均在github上面可找到 <a href="https://github.com/DMQ/mvvm" target="_blank" rel="noopener">https://github.com/DMQ/mvvm</a></p>
-</blockquote>
-<p>相信大家对mvvm双向绑定应该都不陌生了，一言不合上代码，下面先看一个本文最终实现的效果吧，和vue一样的语法，如果还不了解双向绑定，猛戳Google</p>
+          <h2 id="关于邮件发送html的整理"><a href="#关于邮件发送html的整理" class="headerlink" title="关于邮件发送html的整理"></a>关于邮件发送html的整理</h2><p>基本规则<br>控制宽度</p>
+<p>由于Outlook仍然是邮件客户端的霸主，默认界面邮件的科室宽度对于一般屏幕在800px左右，所以不要把邮件内容设置的过宽，700px是个不错的选择</p>
+<p>布局使用 table</p>
+<p>这几乎是 HTML 邮件与普通 HTML 页面最大的区别，因为各个邮箱对 div + css 这一套布局的解析问题很大（如 float / position 等 CSS 都会被过滤，甚至 margin: 0 auto; 都不起作用），基本各大邮箱都会解析混乱，所以老式的 table 布局是上乘之选。这就意味着 HTML 邮件中几乎只有这几个元素——table / tr / td / span / img / a，尽量避免使用 div / p 或是其他标签。</p>
+<p>而且并不是所有邮箱都支持 colspan / rowspan 属性，所以所有布局都需要使用 table 嵌套解决。</p>
+<p>使用表格布局导致的最直接的问题就是会产生多余的空白像素，所以要养成习惯给每个 table 都加上边框 border，单元格内边距 cellpadding，单元格间距 cellspacing，边框合并属性 border-collapse 这些属性：</p>
+<p>&lt;table border=”0”cellpadding=”0”cellspacing=”0”style=”border-collapse: collapse;”&gt;</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/06/11/2018-06-11-vue实现mvvm模式/#more" rel="contents">
+            <a class="btn" href="/2018/06/14/2018-06-15-email/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1603,6 +1610,175 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/06/11/2018-06-11-javascript大全/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/2018-06-11-vue实现mvvm模式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zoumeihui">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://www.gravatar.com/avatar/e87b264d88631de777ecfe2abb602de6?size=128">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="﹏ Memory °">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/11/2018-06-11-vue实现mvvm模式/" itemprop="url">
+                  vue实现mvvm模式
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+                
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-11T18:29:00+08:00">2018-06-11</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/06/11/2018-06-11-vue实现mvvm模式/" class="leancloud_visitors" data-flag-title="vue实现mvvm模式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="vue实现mvvm模式"><a href="#vue实现mvvm模式" class="headerlink" title="vue实现mvvm模式"></a>vue实现mvvm模式</h1><blockquote>
+<p>本文能帮你做什么？<br>1、了解vue的双向数据绑定原理以及核心代码模块<br>2、缓解好奇心的同时了解如何实现双向绑定<br>为了便于说明原理与实现，本文相关代码主要摘自vue源码, 并进行了简化改造，相对较简陋，并未考虑到数组的处理、数据的循环依赖等，也难免存在一些问题，欢迎大家指正。不过这些并不会影响大家的阅读和理解，相信看完本文后对大家在阅读vue源码的时候会更有帮助&lt;<br>本文所有相关代码均在github上面可找到 <a href="https://github.com/DMQ/mvvm" target="_blank" rel="noopener">https://github.com/DMQ/mvvm</a></p>
+</blockquote>
+<p>相信大家对mvvm双向绑定应该都不陌生了，一言不合上代码，下面先看一个本文最终实现的效果吧，和vue一样的语法，如果还不了解双向绑定，猛戳Google</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/11/2018-06-11-vue实现mvvm模式/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1977,161 +2153,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zoumeihui">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://www.gravatar.com/avatar/e87b264d88631de777ecfe2abb602de6?size=128">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="﹏ Memory °">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/09/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-                
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T13:12:00+08:00">2018-06-09</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/06/09/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
 
 
           </div>
@@ -2178,7 +2206,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2209,7 +2237,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2248,7 +2278,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
