@@ -271,7 +271,7 @@
   
   <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">11</span>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">12</span>
       </a>
 </li>
 
@@ -341,6 +341,174 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/10/2018-06-10-git删除所有提交历史记录/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zoumeihui">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://www.gravatar.com/avatar/e87b264d88631de777ecfe2abb602de6?size=128">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="﹏ Memory °">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/10/2018-06-10-git删除所有提交历史记录/" itemprop="url">
+                  git删除所有提交历史记录
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+                
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-10T18:29:00+08:00">2018-06-10</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/06/10/2018-06-10-git删除所有提交历史记录/" class="leancloud_visitors" data-flag-title="git删除所有提交历史记录">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="git删除所有提交历史记录"><a href="#git删除所有提交历史记录" class="headerlink" title="git删除所有提交历史记录"></a>git删除所有提交历史记录</h2><p>以下方法是在当前的分支下新建一个分支，然后把之前分支删除，接着把新建的分支重命名为原分支名称，最后把分支强制推送到远程</p>
+<h3 id="1-Checkout"><a href="#1-Checkout" class="headerlink" title="- 1. Checkout"></a>- 1. Checkout</h3><pre><code>git checkout --orphan latest_branch
+</code></pre><h3 id="2-Add-all-the-files"><a href="#2-Add-all-the-files" class="headerlink" title="- 2. Add all the files"></a>- 2. Add all the files</h3><pre><code>git add -A
+</code></pre><h3 id="3-Commit-the-changes"><a href="#3-Commit-the-changes" class="headerlink" title="- 3. Commit the changes"></a>- 3. Commit the changes</h3><pre><code>git commit -am &quot;commit message&quot;
+</code></pre><h3 id="4-Delete-the-branch"><a href="#4-Delete-the-branch" class="headerlink" title="- 4. Delete the branch"></a>- 4. Delete the branch</h3><pre><code>git branch -D master
+</code></pre><h3 id="5-Rename-the-current-branch-to-master"><a href="#5-Rename-the-current-branch-to-master" class="headerlink" title="- 5.Rename the current branch to master"></a>- 5.Rename the current branch to master</h3><pre><code>git branch -m master
+</code></pre><h3 id="6-Finally-force-update-your-repository"><a href="#6-Finally-force-update-your-repository" class="headerlink" title="- 6.Finally, force update your repository"></a>- 6.Finally, force update your repository</h3><pre><code>git push -f origin master 
+</code></pre>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -547,7 +715,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
